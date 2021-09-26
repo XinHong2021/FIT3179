@@ -1,0 +1,63 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 400,
+     "projection": {"type": "equirectangular"},
+     "title": "Average Medal Number in Countries in Paralympics Per Year",
+      
+    "data": {
+      "url": "https://raw.githubusercontent.com/XinHong2021/FIT3179/main/global.topojson.json",
+     "format": {"type": "topojson", 
+     "feature": "global.geo"} 
+     }, 
+     "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+  
+    "layer":[
+      {
+        "transform": [
+          {"calculate": "'Data is not available in ' + datum.properties.sovereignt", "as": "note"}
+        ],
+        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+        "encoding": {
+          "tooltip": {
+            "field": "note"
+          }
+        }
+      },
+      {
+      "transform": [{
+      "lookup": "properties.sovereignt",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/XinHong2021/FIT3179/main/summer_paralympics.csv"},
+        "key": "Country",
+        "fields": ["M_Total"]
+      }
+    },
+    {"calculate": "(datum.M_Total)/10", "as": "Total Medal Count"}
+    ],
+    
+    "mark": {"type" : "geoshape"},
+    "encoding": {
+      "color": {
+        "field": "M_Total",
+        "type": "quantitative",
+        "scale" : {
+        "type" : "threshold",
+        "domain": [1,10,40,100],
+        "range" : ["#edf8e9", "#bae4b3",  "#74c476","#238b45"]
+      }},
+      "tooltip": [
+          {"field": "properties.sovereignt",
+          "title" : "Country",
+          "type": "nominal"}, 
+          {"field": "M_Total",
+          "title": "Total Medal Count",
+          "type": "quantitative"}    
+      ]
+    }
+      }]
+  }
+  
+  
+   
