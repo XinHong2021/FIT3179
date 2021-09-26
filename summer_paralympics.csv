@@ -1,4 +1,4 @@
-Year,Host_City,Host_Country,Country,Country_Code,Gold,Silver,Bronze,M_Total,Men,Women,P_Total
+Year,Host_City,Host_Country,Country,Country_Code,Gold,Silver,Bronze,Total_Medal,Men,Women,P_Total
 1960,Rome,Italy,Argentina,ARG,2,3,1,6,5,4,9
 1960,Rome,Italy,Australia,AUS,3,6,1,10,10,1,11
 1960,Rome,Italy,Austria,AUT,11,8,11,30,12,7,19
