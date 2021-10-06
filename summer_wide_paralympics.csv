@@ -1,4 +1,4 @@
-Year,Host_City,Host_Country,Country,Gold,Silver,Bronze,M_Total,Men,Women,P_Total,Population,Latitude,Longtitude,Participation_Per_Ten_Million,Discipline,Age,Country,Gender
+Year,Host_City,Host_Country,Country,Gold,Silver,Bronze,M_Total,Men,Women,P_Total,Population,Latitude,Longtitude,Participation_Per_Ten_Million,Discipline,Age,2020_Country,Gender
 1960,Rome,Italy,Argentina,2,3,1,6,5,4,9,45267449,-38.416097,-63.616672,13.25455738,Judo,31,Mongolia,Male
 1960,Rome,Italy,Australia,3,6,1,10,10,1,11,25550683,-25.274398,133.775136,28.70112448,Swimming,36,Chile,Male
 1960,Rome,Italy,Austria,11,8,11,30,12,7,19,9015361,47.516231,14.550072,140.5009369,Judo,23,Azerbaijan,Male
