@@ -1,4 +1,4 @@
-Season,Year,Host_City,Host_Country,Country,Gold,Silver,Bronze,Total_Medal,Total_Participation,Population,Latitude,Longtitude,Gender,Count_by_gener,Participation_per_ten_million,
+Season,Year,Host_City,Host_Country,Country,Gold,Silver,Bronze,Total_Medal,Total_Participation,Population,Latitude,Longtitude,Gender,Count_by_gender,Participation_per_ten_million,
 summer,1960,Rome,Italy,Argentina,2,3,1,6,9,45267449,-38.416097,-63.616672,Men,5,20,
 summer,1960,Rome,Italy,Argentina,2,3,1,6,9,45267449,-38.416097,-63.616672,Women,4,20,
 summer,1960,Rome,Italy,Australia,3,6,1,10,11,25550683,-25.274398,133.775136,Men,10,43,
