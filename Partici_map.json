@@ -1,0 +1,63 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 400,
+   "projection": {"type": "equirectangular"},
+   "title": "Average Medal Number in Countries in Paralympics Per Year",
+    
+  "data": {
+    "url": "https://raw.githubusercontent.com/XinHong2021/FIT3179/main/global.topojson.json",
+   "format": {"type": "topojson", 
+   "feature": "global.geo"} 
+   }, 
+  "layer":[
+    {
+      "transform": [
+        {"calculate": "'Data is not available in ' + datum.properties.sovereignt", "as": "note"}
+      ],
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+      "encoding": {
+        "tooltip": {
+          "field": "note"
+        }
+      }
+    },
+    {
+    "transform": [
+      {
+    "lookup": "properties.sovereignt",
+    "from": {
+      "data": {
+        "url": "https://raw.githubusercontent.com/XinHong2021/FIT3179/main/summer_wide_paralympics.csv"},
+      "key": "Country",
+      "fields": ["Participation_Per_Ten_Million"]
+    }
+  }
+  ],
+  
+  "mark": {"type" : "geoshape", "stroke": "#bdbdbd"},
+  "encoding": {
+    "color": {
+      "field": "Participation_Per_Ten_Million",
+      "type": "quantitative",
+      "scale" : {
+      "type" : "threshold",
+      "domain": [50,200,500, 800],
+      "range" : ["#edf8e9", "#bae4b3",  "#74c476","#238b45"]
+    }},
+    "tooltip": [
+        {"field": "properties.sovereignt",
+        "title" : "Country",
+        "type": "nominal"}, 
+        {"field": "Participation_Per_Ten_Million",
+        "type": "quantitative"}    
+    ]
+  }
+    }],
+    "config": {
+
+ "background": "#F3FAF9"
+
+}
+}
+
