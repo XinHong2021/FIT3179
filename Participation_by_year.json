@@ -1,0 +1,120 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/XinHong2021/FIT3179/main/long_paralympics.csv"},
+  "concat": [{
+    "width":320,
+    "height": 200,
+    "transform": [
+      {"filter": {"field": "Season", "equal": "winter"}}
+    ],
+    "layer": [ 
+      {
+          "selection": { 
+      "gender_highlight": { 
+        "type": "multi", 
+        "fields": ["Gender"], 
+        "bind": "legend" 
+        } 
+      },
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Winter Paralympics by Year"
+        },
+      "y": {
+        "aggregate": "sum",
+        "field": "Count_by_gender",
+        "type": "quantitative",
+        "scale": {"domain": [0, 4500]},
+        "title": ""
+      }, 
+      "color": {
+        "field": "Gender",
+        "scale": {"range": ["#0081c9", "#ee344e"]}
+      },
+      "opacity": { 
+        "condition": 
+        {"selection": "gender_highlight", 
+        "value": 1}, 
+      "value": 0.6 
+      },
+      "tooltip": [ 
+       {"field": "Season", "type": "nominal"},
+       {"field": "Year", "type": "ordinal", "format": ","}]
+          }
+        },
+        
+          { "mark": { 
+            "type": "text", 
+            "align": "right", 
+            "baseline": "middle", 
+            "dx": -12, 
+            "fontSize": 11.5,
+            "fontStyle": "italic" }, 
+            "encoding": { 
+              "text": {"field": "Year", 
+              "type": "nominal"}, 
+              "color": {"value": "black"}, 
+              "opacity": { 
+                "condition": { 
+                  "test": "datum['Year'] == '1988'", 
+                "value": 1 
+              }, 
+              "value": 0 
+            }
+            }
+          }
+        ]
+      }
+        ,{
+      "width":400,
+      "height": 200,
+      "transform": [
+        {"filter": {"field": "Season", "equal": "summer"}}
+      ],
+          "selection": { 
+      "gender_highlight": { 
+        "type": "multi", 
+        "fields": ["Gender"], 
+        "bind": "legend" 
+        } 
+      },
+      "mark": "bar",
+      "encoding": {
+            
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Summer Paralympics by Year"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "Count_by_gender",
+          "type": "quantitative", 
+          "scale": {"domain": [0, 4500]},
+          "title": ""
+        }, 
+          "color": {
+          "field": "Gender",
+          "scale": {"range": ["#0081c9", "#ee344e"]}
+        },
+        "opacity": { 
+        "condition": 
+        {"selection": "gender_highlight", 
+        "value": 1}, 
+      "value": 0.6 
+      },
+        "tooltip": [ 
+          {"field": "Season", "type": "nominal"},
+          {"field": "Year", "type": "ordinal", "format": ","}]
+            }
+          }
+        ],
+    "config": {
+
+ "background": "#F3FAF9"
+
+}
+      }
