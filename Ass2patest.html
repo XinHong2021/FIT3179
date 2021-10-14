@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+  <script src="Ass2.js"></script>
+
+  <link rel="stylesheet" href="layout.css">
+
+</head>
+<body>
+
+ <div class="page">
+
+   <!-- Title pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>60 Years of The Paralympics Games</h1>
+            <h4>On the Opening Ceremony of the London 1948 Olympic Games, the first competition for <strong>wheelchair athletes</strong> 
+                 was named the Stoke Mandeville Games. The Stoke Mandeville Games Later became the
+                Paralympics Games which takes place every <strong>four years</strong> with the same year and city of Olympic Games. 
+            </p4>
+        </div>
+    </div>
+
+  <!-- end pure grid group -->
+
+   <!-- Content 1 pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+          <h2>The increase of Participating Countries</h2>
+        </div>
+      </div>
+
+   <div class="pure-g">
+    <div class="pure-u-1-2">
+      <div id="line_chart"  class="vis-container">
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+        <div class="description description-right">
+          <p>The number of participating countries for Summer paralympic have a dramatically increase from 1960 <strong>(23)</strong> 
+              to 2020 <strong>(161)</strong>. While, winter paralympic participation has sightlt increased from 
+              1976 <strong>(16)</strong> to 2018 <strong>(49)</strong>.</p>
+        </div>
+      </div>
+</div>
+
+<!-- end pure grid group -->
+
+    <!-- Content 2 pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <h2>Total Participating Countries</h2>
+            </div>
+        </div>
+    
+        <div class="pure-u-1">
+              <div id="choropleth_map"  class="vis-container">    
+            </div>
+        </div>
+            <div class="pure-u-3-4">
+              <div class="description description-right">
+                <p>The source of participation distributes in <strong>all continents.</strong> Countries such as 
+                    <strong>USA, Australia, Brazil and Denmark </strong> attend most actively. Well, the participation in 
+                    some countries like <strong>Russia and China</strong> are not aviable in the map.</p>
+              </div>
+            </div>
+    
+    
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+            <h2>Total Participation by Year</h2>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div id="bar_chart" class="vis-container"></div>
+        </div> 
+    </div>
+    <div class="pure-u-2-3">
+        <div class="description description-right">
+          <p>The plot above shows total participation by year in summer and winter paralympic.
+              Less 1000 participation attend each winter paralympic. According to other materials,
+            the data in 1988 might be <strong>wrong</strong>. In summer paralympic, the participation 
+            is keeping an upward trend. Additionally, in each year, there are  <strong>1000</strong> more 
+            <strong>male</strong> than <strong>female</strong>.
+          </p>
+        </div>
+      </div>
+      
+      <!-- pure grid group -->
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="description description-left">
+            <h2>Total Medal in Australia </h2>
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+            <div class="description description-right">
+              <h2>The Disciplines in 2020</h2>
+            </div>
+          </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-2-3">
+          <div id="scattler2_chart" class="vis-container"></div>
+          <p>From the charts, we can see that Australia gained more <strong>silver medals</strong> than  <strong>gold and silver ones</strong>.
+            There is a <strong>sightly</strong> relationship between participation and the number of medals, which can be 
+            seen from the total medals in <strong>2000</strong>. 
+        </p>
+        </div> 
+        
+        <div class="pure-u-1-3">
+            <div id="vert_bar_chart" class="vis-container"></div>
+          </div> 
+
+    </div>  
+    <!-- end pure grid group -->
+
+
+    </div>
+    <!-- end pure grid group -->
+  
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>This visualisation is created by <a href="https://github.com/XinHong2021" target="_blank">Xin Hong</a>. The datasource is <a href="#"" target="_blank">some data repository online</href>.</p>
+      </div>
+    </div>
+  
+
+  </div> <!-- end page -->
+   
+<script type="text/javascript">
+  var specVis1 = "./normalised-stacked-bars-responsive.json";
+  var specVis2= "./line-chart-responsive.json";
+
+  vegaEmbed('#vis1', specVis1, {"actions": false});
+  
+   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis3', specVis1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis4', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+</body>
+</html>
+
