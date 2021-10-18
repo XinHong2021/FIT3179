@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Andada+Pro&family=Fondamento&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+  <script src="Ass2.js"></script>
+
+  <link rel="stylesheet" href="layout.css">
+
+</head>
+<body>
+
+ <div class="page">
+
+   <!-- Title pure grid group -->
+    <div class="header">
+      <div class="pure-u-1-1">
+        <div class="outer" >
+          <div cless = "inner">
+              <img src="https://xinhong2021.github.io/FIT3179/logo.jpg" width="70" height="70" >
+          </div>
+      </div>
+         <h1>The Paralympics Games</h1>
+            <h4>The visualisation is about <strong>60</strong> years of Paralympics Games. 
+            </h4>
+            <h4>
+              The <strong>symbol</strong> of the Paralympic Games is composed of three "agitos",
+              colored <span class='silver_text'> red </span>,  <span class='gold_text'> blue</span> ,
+            and <span class='bronze_text'> green </span>, encircling a single point, on a white filed. 
+            The <strong>Paralympics Games</strong>  takes place every <strong>four years</strong> with 
+            the <strong>same year</strong> and <strong>place</strong> of Olympic Games. 
+            </h4>
+        </div>
+    </div>
+
+  <!-- end pure grid group -->
+
+   <!-- Content 1 pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+          <h2>How the participations increase?</h2>
+        </div>
+    <div class="pure-u-2-5">
+        <div id="line_chart"  class="vis-container">
+        </div>
+        <div class="description description-right">
+            <p>The game <strong>increases 10</strong> participating countries per year.</p>
+            <p>As illustrated in the right chart, <strong>less</strong> participations attend the winter paralympic than summer paralympic. 
+               <strong>The temporary increase </strong> in 1988 might be 
+                <strong>wrong</strong> according to other materials. Additionally, in each year, there are around <strong>1000</strong> more 
+                <span class='men_text'>men</span> than  <span class='women_text'>women</span>.</p>
+            <p><strong>Hint</strong>: Select <strong>legend</strong> to highlight <strong>gender</strong>.</p>
+            </div>     
+        </div>
+    <div class="pure-u-3-5">
+            <div id="bar_chart" class="vis-container"></div>
+        </div> 
+    </div>
+
+
+<!-- end pure grid group -->
+
+    <!-- Content 2 pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <h2>Which Countries Participate?</h2>
+            </div>
+        <div class="pure-u-2-3">
+              <div id="choropleth_map"  class="vis-container">    
+            </div>
+        </div>
+        <div class="pure-u-1-3">
+            <div class="description description-right">
+                <p>The source of participation distributes in <strong>almost all continents</strong>. 
+                  As shown in the map, we can see the <strong>large differences</strong> of participations among countries since
+                  the participations of legend rise in a log scale.</p>
+                <p>If we zoom in, we can find that almost all <strong>Europe countries</strong> attended 
+                  paralympics games. It's probaility related to the national habbies of the countries.  
+                  While <strong>Aisa</strong> might be less active comparing to other continents.</p>
+                <p>As the green becomes darker, more participations in the country. 
+                  Countries such as <strong>USA, Australia, Brazil and Denmark </strong> attend most actively
+                  (more than <strong>1000</strong> per population in total in these <strong>15</strong> years). 
+                  While, the participations in some countries like <strong>Russia and China</strong> are not 
+                  aviable in the map.</p>
+              </div>
+            </div>
+        </div>
+    
+    
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+      <!-- pure grid group -->
+      <div class="pure-g">
+
+        <div class="pure-u-1-1">
+            <h2>How has Australia performed?</h2>
+          </div> 
+
+        <div class="pure-u-2-5">
+          <div class="description description-left">
+            <p>From the charts, we can see that generally, Australia gained <strong>more</strong> 
+              <span class='silver_text'> silver medals</span> than 
+              <span class='gold_text'> gold</span> and  <span class='bronze_text'> bronze ones</span>. </p>
+            <p>In <strong>2000</strong>, Ausrtalia gain the most medals with <span class='gold_text'> 63 gold medals</span>,
+              <span class='bronze_text'> 47 bronze medals</span> and <span class='silver_text'> 39 silver medals</span>.
+              It took place in <strong>Spain</strong> and have the most participations <strong>(286)</strong> which can be seen from the circle size. 
+            On the contrary, the paralympic game in <strong>1984</strong> also got a good result with only <strong>108</strong> participations, with all
+            medals over <strong>50</strong>.</p>
+              <p>  
+              Therefore, there is a <strong>sightly</strong> relationship between <strong>participations</strong> and <strong>the number of medals</strong>. 
+              According to other materials, the reason why Ausrtalia have gained <strong>fewer medals</strong> in the beginning years 
+              is <strong>fewer disciplines</strong> opened.
+          </p>
+          <p>
+            <strong>Hint</strong>: Drag the <strong>x scale</strong> of years to see total medals. 
+            Click <strong>a medal category</strong> to highlight count medals by years. 
+          </p>
+        </div>
+      </div>
+        <div class="pure-u-3-5">
+          <div id="scattler2_chart" class="vis-container"></div>
+          </div>
+        </div>
+
+    <!-- end pure grid group -->
+    <div class="pure-g">
+
+      <div class="pure-u-1-1">
+          <h2>Which are disciplines in 2021?</h2>
+        </div>
+
+      <div class="pure-u-2-3">
+        <div id="vert_bar_chart" class="vis-container"></div>
+        </div>
+      <div class="pure-u-1-3">
+          <div class="description description-right">
+            <p>The <strong>Tokyo</strong> Paralympic games scheduled to take place in <span class='dis_text'> <strong>2020</strong></span>, 
+              but due to the <strong>COVID-19 pandemic</strong> was rescheduled to 24 August to
+              5 Spetember <span class='gold_text'> <strong>2021</strong></span>. To statisfy the most demanding tastes, the 2021 
+             
+            Paralympics offers <strong>23</strong> of best disciplines. Furthermore, it offers 
+            a total <strong>539</strong> events of these disciplines.</p>
+            <p><span class='gold_text'> <strong>The average age </strong></span>of participations is around   <strong>35</strong>. 
+              The <strong>youngest</strong> person who participates the game is no more than 
+              <strong>10</strong> years old. Less people <strong>over 60 </strong> years old to 
+              participate 2020 paralympic game. </p>
+            <p></p>
+            <p><span class='dis_text'> <strong>The aim of Paralympics</strong></span> is to encourage 
+              all <strong>4000</strong> athletes to complete. 
+              Among these participations, <strong>1142</strong> participations 
+              attend <strong>athletics</strong>, followed by <strong>swimming</strong> (<strong>602</strong> participations).
+              While other sports have <strong>fewer</strong> participations. </p>
+            <p>It is true that the disciplies of <span class='dis_text'> <strong>Summer Paralympics</strong></span>  and 
+              <span class='gold_text'> <strong>Summer Paralympics</strong></span> are quite differences since they target 
+              to different people. However, both of them demonstrate the <strong>sportsmanship</strong> of the althletes. 
+            </p>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+  
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>This visualisation is created by <a href="https://github.com/XinHong2021" target="_blank">Xin Hong</a>. The datasource is <a href="#"" target="_blank">some data repository online</href>.</p>
+      </div>
+    </div>
+  
+
+  </div> <!-- end page -->
+   
+<script type="text/javascript">
+  var specVis1 = "./normalised-stacked-bars-responsive.json";
+  var specVis2= "./line-chart-responsive.json";
+
+  vegaEmbed('#vis1', specVis1, {"actions": false});
+  
+   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis3', specVis1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis4', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+</body>
+</html>
+

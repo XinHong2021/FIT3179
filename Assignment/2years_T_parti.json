@@ -1,0 +1,91 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width" : 250,
+  "height" : 50,
+  "data": {
+    "values": [
+      {
+        "The number of participating countries": "17",
+        "Season": "summer",
+        "year": "The first time",
+        "Year": "1960"
+      },
+      {
+        "The number of participating countries": "161",
+        "Season": "summer",
+        "year": "The lastest time",
+         "Year": "2020"
+      },
+      {
+        "The number of participating countries": "16",
+        "Season": "winter",
+        "year": "The first time",
+         "Year": "1976"
+      },
+      {
+        "The number of participating countries": "49",
+        "Season": "winter",
+        "year": "The lastest time",
+          "Year": "2018"
+      }
+    ]
+  },
+  "encoding": {
+    "x": {
+      "field": "The number of participating countries",
+      "type": "quantitative",
+      "scale": {"padding": 0.5}
+    },
+    "y": {"field": "Season", "type": "nominal"}
+  },
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "detail": {"field": "Season", "type": "nominal"},
+        "color": {"value": "#ee344e"}
+      }
+    },
+    {
+      "mark": {"type": "point", "filled": true},
+      "encoding": {
+        "x" : {
+          "field" : "The number of participating countries",
+          "type" : "quantitative",
+          "axis" : {"tickCount": 10},
+          "scale" : {"type" :"point", "domain":[1, 160]}
+        },
+        "tooltip": [
+          {
+            "field": "The number of participating countries",
+            "type": "quantitative",
+            "title": "Number of countries"
+          },
+            {
+            "field": "Year",
+            "type": "nominal",
+            "title": "Year"
+          }
+        ],
+        "color": {
+          "field": "year",
+          "type": "nominal",
+          "scale": {
+            "domain": ["The first time", "The lastest time"],
+            "range": ["#0081c9", "#ee344e"]
+          },
+          "title": "Year"
+        },
+        "size": {"value": 100},
+        "opacity": {"value": 1}
+      }
+    }
+  ],
+  "config": {"background": "#F3FAF9",
+      "axis": {"titleFontSize": 12,
+      "titleFontWeight" : 400},
+  "title":  {"fontSize": 14, "fontWeight": 400},
+ "legend": {"titleFontSize": 14,
+  "titleFontWeight" : 400}
+  }
+}

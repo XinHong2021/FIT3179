@@ -1,0 +1,94 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/XinHong2021/FIT3179/main/summer_medal_long.csv"
+  },
+  "transform": [{"filter": {"field": "Country", "equal": "Australia"}}],
+  "vconcat": [
+    {
+      "encoding": {
+        "color": {
+          "condition": {
+            "param": "brush",
+            "title": "Category",
+            "field": "Category",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Gold", "Silver", "Bronze"],
+              "range": ["#0081c9", "#ee344e", "#74c476"]
+            }
+          },
+          "value": "lightgray"
+        },
+        "size": {
+          "title": "Participation",
+          "field": "P_Total",
+          "scale": {
+            "type": "threshold",
+            "domain": [50, 150, 250],
+            "range": [50, 120, 250, 400]
+          },
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year"
+        },
+        "y": {
+          "title": "Count Medal",
+          "field": "Count_Medal",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {"field": "Year", "type": "ordinal"},
+          {"field": "Category", "type": "nominal"},
+          {"field": "Count_Medal", "type": "quantitative"},
+          {"field": "P_Total", "type": "quantitative", "title": "Participation"}
+        ]
+      },
+      "width": 580,
+      "height": 250,
+      "mark": "circle",
+      "params": [
+        {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
+      ],
+      "transform": [{"filter": {"param": "click"}}]
+    },
+    {
+      "encoding": {
+        "color": {
+          "condition": {
+            "param": "click",
+            "field": "Category",
+            "scale": {
+              "domain": ["Gold", "Silver", "Bronze"],
+              "range": ["#0081c9", "#ee344e", "#74c476"]
+            }
+          },
+          "value": "lightgray"
+        },
+        "x": {
+          "field": "Count_Medal",
+          "aggregate": "sum",
+          "title": "Sum of Medal",
+          "scale": {"domain": [0, 450]}
+        },
+        "y": {"title": "Category", "field": "Category", "sort": "-x"}
+      },
+      "width": 580,
+      "mark": "bar",
+      "params": [
+        {"name": "click", "select": {"type": "point", "encodings": ["color"]}}
+      ],
+      "transform": [{"filter": {"param": "brush"}}]
+    }
+  ],
+  "config": {"background": "#F3FAF9",
+      "axis": {"titleFontSize": 12,
+      "titleFontWeight" : 400},
+  "title":  {"fontSize": 14, "fontWeight": 400},
+ "legend": {"titleFontSize": 14,
+  "titleFontWeight" : 400}
+  }
+}

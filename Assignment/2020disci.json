@@ -1,0 +1,89 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/XinHong2021/FIT3179/main/summer_wide_paralympics.csv"
+  },
+  "hconcat": [
+    {
+      "width": 320,
+      "height": 500,
+      "mark": {"type": "boxplot", 
+      "size" : 20,
+      "extent": "min-max"},
+      "transform": [
+    {"filter": "datum.Age < 70" } 
+  ],
+      "encoding": {
+        "x": {
+          "field": "Age",
+          "type": "quantitative",
+          "scale": {
+           "zero": false
+          },
+          "title": "Age of participations",
+          "axis": {"orient": "top"}
+        },
+        "y": {
+          "field": "Discipline",
+          "type": "nominal",
+          "title": "Discipline"
+        },
+        "color": {"value" : "#0081c9"}
+      }
+    },
+    {
+      "width": 280,
+      "height": 500,
+       "transform": [
+    {"filter": "datum.Age < 70" } 
+  ],
+      "encoding": {
+        "y": {
+          "field": "Discipline",
+          "title": "Discipline",
+          "type": "nominal",
+          "sort": "-x",
+          "axis": null
+        },
+        "x": {
+          "aggregate": "count",
+          "scale": {"domain": [0, 1300]},
+          "axis": {"orient": "top"},
+          "title": "Count of Participations"
+        }
+      },
+      "layer": [
+        {"mark": {"type": "bar", "color": "#bbb"}},
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "xOffset": -5,
+            "aria": false
+          },
+          "encoding": {
+            "text": {
+              "field": "Discipline",
+              "aggregate": "count",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "mark": {"type": "text", "align": "left", "x": 5},
+          "encoding": {
+            "text": {"field": "Discipline"},
+            "detail": {"aggregate": "count"}
+          }
+        }
+      ]
+    }
+  ],
+  "config": {"background": "#F3FAF9",
+      "axis": {"titleFontSize": 12,
+      "titleFontWeight" : 400},
+  "title":  {"fontSize": 14, "fontWeight": 400},
+ "legend": {"titleFontSize": 14,
+  "titleFontWeight" : 400}
+  }
+}
