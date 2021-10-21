@@ -31,7 +31,7 @@
             "fields": ["Participation_Per_Ten_Million"]
           }
         },
-        { "calculate": "datum.Participation_Per_Ten_Million/15", "as": "Participation Per Year" }
+        { "calculate": "datum.Participation_Per_Ten_Million/15", "as": "Average Participation Per Year" }
       ],
       "mark": {"type": "geoshape", "stroke": "#bdbdbd"},
       "encoding": {
